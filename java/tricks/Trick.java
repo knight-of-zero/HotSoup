@@ -7,10 +7,8 @@ import tricks.exceptions.IllegalPlayException;
 import tricks.exceptions.TrickTerminatedException;
 import tricks.plays.Play;
 
-import java.util.Collections;
 import java.util.Deque;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * A class which stores all the plays from a given hand
