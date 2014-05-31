@@ -17,8 +17,13 @@ final class Pairs extends Play {
   /**
    * Make a Pairs from the given cards.
    */
-  Pairs(Collection<? extends Card> playedCards) {
+  private Pairs(Collection<? extends Card> playedCards) {
     super(ImmutableSortedMultiset.orderedBy(Card::compareByRank).addAll(playedCards).build());
+  }
+  
+  /** Try to parse the given Collection into a Pairs, and return null if we can't. */
+  static Pairs tryPairs(Collection<? extends Card> cards) {
+    return PlayUtils.isLegalSameRankOrdinaryPlay(cards, 2) ? new Pairs(cards) : null;
   }
 
   // ------------------------------------------------------------------------

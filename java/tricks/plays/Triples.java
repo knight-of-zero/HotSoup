@@ -14,8 +14,13 @@ public class Triples extends Play {
   /**
    * Make a Triples from the given cards.
    */
-  Triples(Collection<? extends Card> playedCards) {
+  private Triples(Collection<? extends Card> playedCards) {
     super(ImmutableSortedMultiset.orderedBy(Card::compareByRank).addAll(playedCards).build());
+  }
+  
+  /** Try to parse the given Collection into a Triples, and return null if we can't. */
+  public static Triples tryTriples(Collection<? extends Card> cards) {
+    return PlayUtils.isLegalSameRankOrdinaryPlay(cards, 3) ? new Triples(cards) : null;
   }
 
   @Override
