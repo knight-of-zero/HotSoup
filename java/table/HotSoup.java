@@ -1,8 +1,9 @@
 package table;
 
-import cards.Card;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.*;
+
+import deck.Card;
 import table.exceptions.PlayerAlreadyPresentException;
 import table.exceptions.UnexpectedPassException;
 import tricks.plays.Play;
@@ -99,8 +100,8 @@ public final class HotSoup {
      * This takes into account the previous plays
      */
     public boolean makePlay(Collection<? extends Card> play) {
-        Play converted = Play.of(play);
-        if (converted == null) {
+        Collection<Play> validPlays = Play.findValid(play);
+        if (validPlays.isEmpty()) {
             return false;
         }
 

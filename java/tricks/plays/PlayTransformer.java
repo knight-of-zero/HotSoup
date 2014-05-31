@@ -1,8 +1,8 @@
 package tricks.plays;
 
-import cards.Card;
-
 import java.util.Collection;
+
+import deck.Card;
 
 /**
  * Interface for classes which transform a collection of cards into
@@ -11,6 +11,7 @@ import java.util.Collection;
  * These work on a best-effort basis. If they don't know how to convert
  * the given collection of cards into a valid Play, they'll return null.
  */
+@FunctionalInterface
 interface PlayTransformer {
 
     /**
