@@ -1,19 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.somedomain.hotsoup</groupId>
-  <artifactId>HotSoup</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>bemiller.games.hotsoup</groupId>
+  <artifactId>hotsoup</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>hotsoup webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>17.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-core</artifactId>
+	  <version>2.3.16.3</version>
+    </dependency>
+  </dependencies> 
   
   <build>
-    <directory>${project.basedir}/target</directory>
-    <sourceDirectory>${project.basedir}/java</sourceDirectory>
-    <testSourceDirectory>${project.basedir}/test-java</testSourceDirectory>
-    <outputDirectory>${project.build.directory}/java</outputDirectory>
-    <testOutputDirectory>${project.build.directory}/test-java</testOutputDirectory>
+    <finalName>hotsoup</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -28,18 +43,4 @@
       </plugins>
     </pluginManagement>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>17.0</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-  </dependencies>
-
 </project>
