@@ -7,13 +7,17 @@
 
   <display-name>HotSoupTime</display-name>
 
+  <listener>
+    <listener-class>me.soupbringer.hotsoup.conf.HotSoupGuiceServletConfig</listener-class>
+  </listener>
+
   <filter>
-    <filter-name>struts2</filter-name>
-    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    <filter-name>guiceFilter</filter-name>
+    <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
   </filter>
 
   <filter-mapping>
-    <filter-name>struts2</filter-name>
+    <filter-name>guiceFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>
